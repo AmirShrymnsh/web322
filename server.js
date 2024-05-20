@@ -12,6 +12,20 @@
 *  GitHub Repository URL: https://github.com/AmirShrymnsh/web322
 **/
 
-console.log("Full Name : Amirali Shahriarymanesh"); 
-console.log("Student ID: 153106232"); 
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
+
+// Set EJS as the templating engine
+app.set('view engine', 'ejs');
+
+// Define the route to render the HTML template
+app.get('/', (req, res) => {
+  res.render('index', { name: 'Full Name: Amirali Shahriarymanesh', studentId: 'Student ID: 153106232' });
+});
+
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
+});
+
 
