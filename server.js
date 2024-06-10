@@ -22,11 +22,11 @@ app.use(express.static('public'));
 
 // Route for the "/" path - redirects to "/about"
 app.get('/', (req, res) => {
-    res.redirect('/about');
+    res.redirect('/index');
 });
 
 // Route for the "/about" path - returns the about.html file
-app.get('/about', (req, res) => {
+app.get('/index', (req, res) => {
     res.sendFile(__dirname + '/views/about.html');
 });
 
